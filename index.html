@@ -7,9 +7,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      height: 100%;
-    }
+    html { height: 100%; }
 
     body {
       min-height: 100vh;
@@ -53,6 +51,32 @@
     }
     p:last-child { margin-bottom: 0; }
 
+    /* About me row */
+    .about-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .about-text { flex: 1; }
+
+    .photo-circle {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 0.5px solid #333;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Links */
     .links { display: flex; flex-direction: column; gap: 10px; }
     .links a {
       font-size: 14px;
@@ -66,6 +90,7 @@
     .links a:hover { color: #fff; }
     .links a span { color: #444; font-size: 12px; }
 
+    /* Timeline */
     .tl { display: flex; flex-direction: column; }
     .tl-row {
       display: grid;
@@ -81,6 +106,8 @@
 
     @media (max-width: 480px) {
       body { align-items: flex-start; padding: 2.5rem 1.5rem; }
+      .about-row { flex-direction: column-reverse; align-items: flex-start; }
+      .photo-circle { width: 64px; height: 64px; }
       .tl-row { grid-template-columns: 1fr; gap: 3px; padding: 12px 0; }
       .tl-date { font-size: 11px; }
     }
@@ -91,8 +118,18 @@
 
     <div class="section">
       <h2>About me</h2>
-      <p>I am Bala and I like imagining and visualizing random scenarios in my mind. Someday I'll get you too to these visuals through computer graphics.</p>
-      <p>I enjoy playing and watching Football (big time Dortmund fan), Cricket, watching Movies, travelling, trekking, discussing Geopolitics and chilling with friends.</p>
+      <div class="about-row">
+        <div class="about-text">
+          <p>I am Bala and I like imagining and visualizing random scenarios in my mind. Someday I'll get you too to these visuals through computer graphics.</p>
+          <p>I enjoy playing and watching Football (big time Dortmund fan), Cricket, watching Movies, travelling, trekking, discussing Geopolitics and chilling with friends.</p>
+        </div>
+        <div class="photo-circle">
+          your<br>photo
+          <!-- Replace this div with:
+          <img src="photo.jpg" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;border:0.5px solid #333;" alt="Bala" />
+          -->
+        </div>
+      </div>
     </div>
 
     <hr>
